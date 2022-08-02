@@ -1,0 +1,514 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* .row::after{
+    content: "";
+    display: block;
+    clear: both;
+} */
+
+.row{
+    margin-left: -8px;
+    margin-right: -8px;
+}
+/* chu y cho nay */
+.row::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.col{
+    float: left;
+    /* 2 dong nay dùng để tạo khoảng cách giữa các bức ảnh */
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.col-third-size{
+    width: 33.3333%;
+}
+
+.col-half{
+    width: 50%;
+}
+
+.col-full{
+    width: 100%;
+}
+
+.text-center{
+    text-align: center !important;
+}
+.color-white{
+    color: #fff !important;
+}
+.color-sold-out{
+    background-color: #f44336!important;
+}
+
+.mt-8{
+    margin-top: 8px !important;
+}
+
+.mt-16{
+    margin-top: 16px !important;
+}
+
+.mt-32{
+    margin-top: 32px !important;
+}
+/* header */
+#header {
+    height: 46px;
+    background-color: #000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    /* Các thuộc tính vượt quá thằng cha thì bị ẩn đi */
+}
+
+#nav{
+    display: inline-block;
+}
+
+#nav li{
+    display: inline-block;
+    position: relative;
+} 
+
+#nav , .subnav{
+    list-style-type: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.37);
+}
+
+#nav > li > a{
+    color: #fff;
+    text-transform: uppercase;
+}
+
+#nav li a{
+    text-decoration: none;
+    line-height: 46px;
+    padding: 0 24px;
+    display: block;
+}
+
+#nav li:hover .subnav {
+    display: block;
+}   
+
+#nav >li:hover >a,
+#nav .subnav >li:hover{
+    background-color: #ccc;
+    color: #000;
+}
+
+#nav li:hover a{
+    display: inline-block;
+    /* dùng để cho chiều rộng, sang mobile nó không lỗi */
+    width: 100%;
+}
+
+#nav .subnav {  
+    position: absolute;
+    background-color: #fff;
+    display: none;
+    left: 0;
+    top: 100%;
+}
+
+#nav .subnav li{
+    width: 100%;
+ }
+ 
+ #nav .subnav a{
+    color: #000;
+    padding: 0 16px;
+    line-height: 38px;
+    width: 160px;
+}
+
+#nav .icon-down{
+    font-size: 11px;
+}
+
+#header .menu-mobile-btn{
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
+}
+
+#header .menu-mobile-btn,
+#header .search-btn{
+    float: right;
+    padding: 12px 24px;
+    height: 46px;
+}
+
+#header .search-btn:hover{
+    background-color:#f44336;
+    cursor: pointer;
+}
+
+#header .menu-mobile-btn:hover {
+    background-color: #ccc;
+}
+
+#header .menu-mobile-btn:hover .menu-icon{
+    color: #000;
+}
+
+#header .menu-icon,
+#header .search-icon{
+    color: #fff;
+    font-size: 18px;
+}
+/* slider */
+#slider{
+    position: relative;
+    margin-top: 46px;
+    padding-top: 50%;
+    background: url('../slider/chicago.jpg') top center / cover no-repeat;
+    color: #fff;
+}
+
+#slider .text-content{
+    position: absolute;
+    bottom: 47px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+#slider .text-heading{
+    font-weight: 500;
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+#slider .sub-text-heading{
+    font-size: 15px;
+    margin: 15px 0;
+    text-shadow: 0 0 1px black;
+}
+/* content */
+#content{
+    position: relative;
+}
+
+#content .content-section{
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 64px 0 112px;
+    line-height: 1.4;
+    /* cái này mạnh, nó sẽ mạnh hơn width:800px
+    fix ở reponsive */
+    max-width: 100%;
+    /* thử tắt cái này xem sẽ khác, ở IpadMini */
+    padding-left: 16px;
+    padding-right: 16px;
+}
+.title-content{
+    font-size: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 400;
+    text-align: center;
+    margin: 10px 0;
+}
+.sub-content{
+    font-size: 15px;
+    font-family: sans-serif;
+    opacity: 0.6;
+    text-align: center;
+    margin: 15px;
+}
+.content-section .content{
+    text-align: justify;
+    margin: 15px 0;
+}
+
+#content .member-list{
+    overflow: hidden;
+    margin-top: 32px 0;
+}
+
+#content .member-img{
+    width: 154px;
+    border-radius: 4px;
+}
+
+#content .name-member{
+    margin: 15px 0;
+}
+/* tour */
+#content .tour-section{
+    background-color: #000;
+}
+
+.tour-section .ticket-list{
+    background-color: #fff;
+    
+}
+
+.ticket-list{
+    margin-top: 40px;
+}
+
+.ticket-list li{
+    list-style-type: none;
+    border-bottom: 1px solid #ddd;
+    padding: 8px 16px;
+    font-size: 15px;
+    color: #757575;
+}
+.ticket-list .sold-out{
+    margin-left: 16px;
+    color: #fff;
+    padding: 4px 5px;
+}
+.ticket-list .quantity{
+    border-radius: 50%;
+    background-color: #000;
+    padding: 0 8px;
+    color: #fff;
+    float: right;
+}
+/* place to show */
+.place-show{
+    background-color: #fff;
+    padding: 16px;
+}
+.place-list{
+    margin-top: px;
+}
+.img-place{
+    width: 100%;
+    display: block;
+}
+
+.img-place:hover{
+    opacity: 0.6;
+}
+.place-detail{
+    margin: 15px 0 ;
+    line-height: 1.4;
+    font-size: 15px;
+}
+
+.place-time{
+    opacity: 0.5;
+    font-size: 15px;
+}
+
+.title-place{
+    margin: 15px 0;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.btn{
+    padding: 11px 16px;
+    text-decoration: none;
+    background-color: #000;
+    color: #fff;
+    font-size: 15px;
+    margin-bottom: 15px;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    border: none;
+}
+
+.btn:hover{
+    background-color: #ccc;
+    color: #000;
+}
+
+.text-contact{
+    font-size: 17px;
+    line-height: 1.4;
+    font-family: sans-serif;
+}
+
+.contact-input{
+    padding: 0 8px;
+}
+
+.contact-input .form-control{
+    padding:8px;
+    border: 1px solid #ccc;
+    width: 100%;
+}
+
+.contact-inf i[class*="ti-"]{
+    width: 30px;
+    display: inline-block;
+}
+
+.btn-send-contact{
+    float: right;
+}
+
+.map-detail img{
+    width: 100%;
+}
+
+
+/* modal */
+.modal{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.3);
+    align-items: center;
+    justify-content: center;
+    display: none;
+
+}
+.modal.open{
+    display: flex;
+}
+
+.modal-container{
+    background-color: #fff;
+    width: 900px;
+    max-width: calc(100% - 40px);
+    min-height: 520px;
+    position: relative;
+    animation: modalFadeIn ease 0.4s;
+}
+
+.modal-header-icon{
+    margin-right: 16px;
+}
+
+.modal-header{
+    height: 130px;
+    background-color: #009688;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 30px;
+    font-family: sans-serif;
+
+}
+
+.modal-close{
+    position: absolute;
+    color: #fff;
+    top: 0;
+    right: 0;
+    padding: 12px;
+}
+
+.modal-close:hover{
+    background-color: #f44336;
+    cursor: pointer;
+}
+
+.modal-body{
+    padding: 16px;
+}
+
+.modal-label{
+    display: block;
+    margin: 15px 0;
+    font-size: 16px;
+}
+.modal-input{
+    padding: 14px;
+    width: 100%;
+    border: 1px solid #ccc;
+    margin-bottom: 16px;
+}
+
+#btn-buy-tickets{
+    margin: 16px 0px;
+    padding: 18px;
+    background-color: #009688;
+    width: 100%;
+    color: #fff;
+    text-transform: uppercase;
+    font-family: Arial, Helvetica, sans-serif;
+    cursor: pointer;
+    border: none;
+    font-size: 18px;
+}
+#btn-buy-tickets:hover{
+    background-color: #ccc;
+    color: #000;
+}
+.modal-icon-check{
+    font-size: 16px;
+}
+.modal-footer{
+    position: absolute;
+    right: 10px;
+    padding-bottom: 10px;
+}
+.modal-footer a{
+    color: #2196F3;
+}
+
+/* footer */
+
+#footer{
+    padding: 64px 16px;
+}
+
+.social-list i[class*="ti-"]{
+    font-size: 24px;
+}
+
+.social-list a{
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.social-list a:hover{
+    opacity: 0.6;
+}
+
+#footer .copyright{
+    font-size: 15px;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+#footer .address{
+    font-size: 15px;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+@keyframes modalFadeIn{
+    /* điểm bắt đầu của container-modal */
+    from {
+        transform: translateY(-150px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Responsvie với PC, Tablet, Mobile */
+/* 
+    PC >= 1024px
+    Tablet: >=740px & < 1024px
+    Mobile: < 740px
+*/
+
